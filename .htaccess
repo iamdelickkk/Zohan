@@ -1,0 +1,8 @@
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php
+RewriteRule ^profile/([a-zA-Z0-9_-]+)/?$ usr.php?u=$1 [QSA,L]
+RewriteRule ^post/([a-zA-Z0-9_-]+)/?$ status.php?v=$1 [QSA,L]
+ErrorDocument 404 /404.php
